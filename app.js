@@ -1,50 +1,52 @@
-let clock = () => {
+function clock() {
     let date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let period = "";
+    let nHours = date.getHours();
+    let nMinutes = date.getMinutes();
+    let sPeriod = "";
 
-    if (hours == 0) {
-        hours = 12;
-        period = "am";
-    } else if (hours < 12) {
-        period = "am";
-    } else if (hours == 12) {
-        period = "pm";
-    } else if (hours > 12) {
-        hours = hours - 12;
-        period = "pm";
+    if (nHours === 0) {
+        nHours = 12;
+        sPeriod = "AM";
+    } else if (nHours < 12) {
+        sPeriod = "AM";
+    } else if (nHours == 12) {
+        sPeriod = "PM";
+    } else if (nHours > 12) {
+        nHours = nHours - 12;
+        sPeriod = "PM";
     }
 
-    if (minutes < 10) {
-        minutes = "0" + minutes;
+    if (nMinutes < 10) {
+        nMinutes = "0" + nMinutes;
     }
 
-    let time = `${hours}:${minutes}`
-    console.log(time)
+    let sTime = `${nHours}:${nMinutes}`;
+    // console.log(sTime);
 
-    document.getElementById("time").innerText = time + period;
+    document.querySelector("#time").innerText = sTime;
+    document.querySelector("#ampm").innerText = sPeriod;
     setTimeout(clock, 1000);
-
-}
-clock();
-
-let changeTextColor = () => {
-    document.getElementById("fullpage").style.color = event.target.value;
 }
 
-txtcolor.addEventListener('input', function () {
-    let newtxtcolor = event.target.value
-    console.log(event.target.value)
+function changeTextColor(event) {
+    document.querySelector("#fullpage").style.color = event.target.value;
+}
+
+function changeBgColor(event) {
+    document.querySelector("#fullpage").style.backgroundColor = event.target.value;
+}
+
+document.querySelector("#txtcolor").addEventListener("input", function (event) {
+    let newtxtcolor = event.target.value;
+    console.log(event.target.value);
     changeTextColor(newtxtcolor);
 })
 
-let changeBgColor = () => {
-    document.getElementById("fullpage").style.backgroundColor = event.target.value;
-}
-
-bgcolor.addEventListener('input', function () {
-    let newbgcolor = event.target.value
-    console.log(event.target.value)
+document.querySelector("#bgcolor").addEventListener("input", function (event) {
+    let newbgcolor = event.target.value;
+    console.log(event.target.value);
     changeBgColor(newbgcolor);
 })
+
+clock();
+
