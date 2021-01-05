@@ -7,28 +7,26 @@
     <title>Clock</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="app.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <section class="section" id="fullpage">
-        <div class="container" id="clock">
-            <h1 id="time">time</h1>
-        </div>
-        <div class="container" id="colorpickers">
+<section class="section" id="fullpage">
+    <div class="container" id="clock">
+        <h1 id="time">time</h1><h1 id="ampm">am</h1>
+    </div>
+    <div class="container" id="colorpickers">
             <span class="colorpicker">
                 <label for="bgcolor">Background color:</label>
-                <input type="color" id="bgcolor" name="bgcolor" value="#000000">
+                <input type="color" id="bgcolor" name="bgcolor" , value="#0A0A0A">
             </span>
-            <span class="colorpicker">
+        <span class="colorpicker">
                 <label for="txtcolor">Text color:</label>
-                <input type="color" id="txtcolor" name="txtcolor" value="#ffffff">
+                <input type="color" id="txtcolor" name="txtcolor" , value="#7DD2DC">
             </span>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 
 </html>
